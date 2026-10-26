@@ -1,0 +1,303 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #fff;
+  --tx: #1b2430;
+  --mut: #6a7686;
+  --ac: #2f5d9e;
+  --bd: #d9dee6;
+  --ok: #1d8a4f;
+  --er: #c0392b;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161c;
+    --card: #1b222c;
+    --tx: #e8edf3;
+    --mut: #93a0b0;
+    --ac: #6ea0e6;
+    --bd: #2d3744;
+    --ok: #4cc788;
+    --er: #ff7b6b;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #12161c;
+  --card: #1b222c;
+  --tx: #e8edf3;
+  --mut: #93a0b0;
+  --ac: #6ea0e6;
+  --bd: #2d3744;
+  --ok: #4cc788;
+  --er: #ff7b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--tx);
+  font:
+    15px/1.5 system-ui,
+    -apple-system,
+    Segoe UI,
+    sans-serif;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--card);
+  border-bottom: 1px solid var(--bd);
+}
+
+h1 {
+  font-size: 17px;
+  margin: 0;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+button {
+  font: inherit;
+  border: 1px solid var(--bd);
+  background: var(--card);
+  color: var(--tx);
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.p,
+button.on {
+  background: var(--ac);
+  color: #fff;
+  border-color: var(--ac);
+}
+
+button.d {
+  color: var(--er);
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid var(--bd);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--tx);
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sc {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--bd);
+  white-space: nowrap;
+}
+
+th {
+  color: var(--mut);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.mut {
+  color: var(--mut);
+  font-size: 13px;
+}
+
+.res {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+.res.ok {
+  border: 2px solid var(--ok);
+}
+
+.res.er {
+  border: 2px solid var(--er);
+  color: var(--er);
+}
+
+.av {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--ac);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  margin: 0 auto 8px;
+}
+
+video {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 10px;
+  background: #000;
+}
+
+.cal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  max-width: 420px;
+}
+
+.cal div {
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid var(--bd);
+  font-size: 13px;
+}
+
+.cal .pr {
+  background: var(--ok);
+  color: #fff;
+  border-color: var(--ok);
+}
+
+.cal .h {
+  border: 0;
+  color: var(--mut);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.stat {
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  color: var(--mut);
+}
+
+.stat b {
+  font-size: 26px;
+  display: block;
+  color: var(--tx);
+}
+
+img.av {
+  display: block;
+  object-fit: cover;
+  background: none;
+}
+
+.clock {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.late {
+  color: var(--er);
+}
+
+@media print {
+  header,
+  .np {
+    display: none;
+  }
+}
+
+header a {
+  color: var(--ac);
+  text-decoration: none;
+  padding: 7px 12px;
+  border: 1px solid var(--bd);
+  border-radius: 8px;
+}
+
+.login {
+  max-width: 480px;
+  margin: 10vh auto 0;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.login h2 {
+  font-size: 30px;
+  margin: 0 0 20px;
+}
+
+.login p {
+  margin: 0 0 14px;
+}
+
+.login input {
+  width: 100%;
+  font-size: 19px;
+  padding: 15px;
+  text-align: center;
+}
+
+.login button {
+  width: 100%;
+  font-size: 19px;
+  padding: 15px;
+  margin-top: 4px;
+}
+
+.login .mut {
+  margin-top: 16px;
+  font-size: 14px;
+}
